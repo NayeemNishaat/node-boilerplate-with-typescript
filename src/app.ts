@@ -1,7 +1,11 @@
 import express, { Request, Response, NextFunction } from "express";
+import cors from "cors";
 const app = express();
 import { AppError } from "./lib/error";
 import errorHandler from "./controllers/errorController";
+
+// Part: CORS
+app.use(cors());
 
 // Part: Parsing body
 app.use(express.json());
